@@ -3,7 +3,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-import "./style.scss";
+import "./Select.scss";
 
 const Select = ({
   selection,

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import Slider from "./index";
-import { api, DataProvider } from "../../contexts/DataContext";
+import Slider from "./Slider";
+import { api, DataProvider } from "../../contexts/DataContext/DataContext";
 
 const data = {
   focus: [

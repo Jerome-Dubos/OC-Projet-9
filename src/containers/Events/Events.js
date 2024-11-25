@@ -1,11 +1,11 @@
 import { useState } from "react";
-import EventCard from "../../components/EventCard";
-import Select from "../../components/Select";
-import { useData } from "../../contexts/DataContext";
-import Modal from "../Modal";
-import ModalEvent from "../ModalEvent";
+import EventCard from "../../components/EventCard/EventCard";
+import Select from "../../components/Select/Select";
+import { useData } from "../../contexts/DataContext/DataContext";
+import Modal from "../Modal/Modal";
+import ModalEvent from "../ModalEvent/ModalEvent";
 
-import "./style.css";
+import "./Events.css";
 
 const PER_PAGE = 9;
 

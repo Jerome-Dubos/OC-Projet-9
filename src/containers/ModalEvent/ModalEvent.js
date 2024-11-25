@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import "./style.scss";
+import "./ModalEvent.scss";
 
 const ModalEvent = ({ event }) => (
     <div className="ModalEvent">

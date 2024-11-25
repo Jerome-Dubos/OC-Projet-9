@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import "./style.scss";
+import "./ServiceCard.scss";
 
 const ServiceCard = ({ imageSrc, imageAlt, children }) => (
     <div className="ServiceCard">

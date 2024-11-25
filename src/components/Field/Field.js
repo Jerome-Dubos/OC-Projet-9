@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import "./style.scss";
+import "./Field.scss";
 
 export const FIELD_TYPES = {
   INPUT_TEXT: 1,

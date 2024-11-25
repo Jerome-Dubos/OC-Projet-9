@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { useData } from "../../contexts/DataContext";
-import { getMonth } from "../../helpers/Date";
+import { useData } from "../../contexts/DataContext/DataContext";
+import { getMonth } from "../../helpers/Date/Date";
 
-import "./style.scss";
+import "./Slider.scss";
 
 const Slider = () => {
   const { data } = useData();
@@ -25,9 +25,8 @@ const Slider = () => {
         <>
           <div
             key={event.title}
-            className={`SlideCard SlideCard--${
-              index === idx ? "display" : "hide"
-            }`}
+            className={`SlideCard SlideCard--${index === idx ? "display" : "hide"
+              }`}
           >
             <img src={event.cover} alt="forum" />
             <div className="SlideCard__descriptionContainer">

@@ -1,8 +1,8 @@
 import { useCallback, useState } from "react";
 import PropTypes from "prop-types";
-import Field, { FIELD_TYPES } from "../../components/Field";
-import Select from "../../components/Select";
-import Button, { BUTTON_TYPES } from "../../components/Button";
+import Field, { FIELD_TYPES } from "../../components/Field/Field";
+import Select from "../../components/Select/Select";
+import Button, { BUTTON_TYPES } from "../../components/Button/Button";
 
 const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 500); })
 

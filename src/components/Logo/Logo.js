@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 import PropTypes from "prop-types";
-import "./style.scss";
+import "./Logo.scss";
 
 const Logo = ({ size }) => (
   <div className="Logo">
