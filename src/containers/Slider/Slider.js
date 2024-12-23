@@ -46,7 +46,9 @@ const Slider = () => {
               </div>
             </div>
           </div>
-          <div className="SlideCard__paginationContainer">
+        </div>
+      ))}
+       <div className="SlideCard__paginationContainer">
             <div className="SlideCard__pagination">
               {byDateDesc.map((paginationEvent) => (
                 <input
@@ -59,8 +61,6 @@ const Slider = () => {
               ))}
             </div>
           </div>
-        </div>
-      ))}
     </div>
   );
 };
