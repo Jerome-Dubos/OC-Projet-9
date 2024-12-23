@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EventCard from "../../components/EventCard/EventCard";
 import Select from "../../components/Select/Select";
 import { useData } from "../../contexts/DataContext/DataContext";
@@ -11,27 +11,28 @@ const PER_PAGE = 9;
 
 const EventList = () => {
   const { data, error } = useData();
-  const [type, setType] = useState();
+  const [type, setType] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const filteredEvents = (
-    (!type
-      ? data?.events
-      : data?.events.filter(event => event.type === type)) || [] // Ajout de ".filter"
-  ).filter((event, index) => {
-    if (
-      (currentPage - 1) * PER_PAGE <= index &&
-      PER_PAGE * currentPage > index
-    ) {
-      return true;
-    }
-    return false;
-  });
+  const [filteredEvents, setfilteredEvents] = useState([])
+  const [pageNumber, setPageNumber] = useState(0)
+
+  useEffect(() => {
+    const filteredEventsAll = (data?.events || []).filter((event) => !type || event.type === type)
+    const paginatedEvents = filteredEventsAll.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE)
+    setfilteredEvents(paginatedEvents)
+    setPageNumber(Math.ceil(filteredEventsAll.length / PER_PAGE));
+  }, [data, type, currentPage])
+ 
   const changeType = (evtType) => {
-    setCurrentPage(1);
+    console.log(evtType);
+
+    
+    setCurrentPage(1); 
     setType(evtType);
   };
-  const pageNumber = Math.floor((filteredEvents?.length || 0) / PER_PAGE) + 1;
+  
   const typeList = new Set(data?.events.map((event) => event.type));
+  console.log(typeList);
   return (
     <>
       {error && <div>An error occured</div>}
@@ -44,7 +45,7 @@ const EventList = () => {
             selection={Array.from(typeList)}
             onChange={(value) => (value ? changeType(value) : changeType(null))}
           />
-          <div id="events" className="ListContainer" >
+          <div id="events" className="ListContainer">
             {filteredEvents.map((event) => (
               <Modal key={event.id} Content={<ModalEvent event={event} />}>
                 {({ setIsOpened }) => (
