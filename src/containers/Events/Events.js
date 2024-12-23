@@ -24,9 +24,7 @@ const EventList = () => {
   }, [data, type, currentPage])
  
   const changeType = (evtType) => {
-    console.log(evtType);
-
-    
+    console.log(evtType);    
     setCurrentPage(1); 
     setType(evtType);
   };
