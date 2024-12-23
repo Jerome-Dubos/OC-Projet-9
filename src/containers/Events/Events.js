@@ -22,15 +22,14 @@ const EventList = () => {
     setfilteredEvents(paginatedEvents)
     setPageNumber(Math.ceil(filteredEventsAll.length / PER_PAGE));
   }, [data, type, currentPage])
- 
+
   const changeType = (evtType) => {
-    console.log(evtType);    
-    setCurrentPage(1); 
+    setCurrentPage(1);
     setType(evtType);
   };
-  
+
   const typeList = new Set(data?.events.map((event) => event.type));
-  console.log(typeList);
+
   return (
     <>
       {error && <div>An error occured</div>}

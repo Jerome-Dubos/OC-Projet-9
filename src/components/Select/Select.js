@@ -16,9 +16,9 @@ const Select = ({
   const [value, setValue] = useState();
   const [collapsed, setCollapsed] = useState(true);
   const changeValue = (newValue) => {
-    onChange();
     setValue(newValue);
     setCollapsed(newValue);
+    onChange(newValue); // Au changement, envoie la value dans Events.js
   };
   return (
     <div className={`SelectContainer ${type}`} data-testid="select-testid">
