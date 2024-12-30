@@ -119,7 +119,7 @@ const Page = () => {
         <div className="col presta">
           <h3>Notre dernière prestation</h3>
           {!last ? (
-            "Waiting last event..."
+            "Chargement..."
           ) : (
             <Modal key={last.id} Content={
               <ModalEvent event={last} />}>
