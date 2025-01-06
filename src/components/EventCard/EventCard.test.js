@@ -3,10 +3,10 @@ import EventCard from "./EventCard";
 
 describe("When a event card is created", () => {
   it("an image is display with alt value", () => {
-    render(<EventCard imageSrc="http://src-image" imageAlt="image-alt-text" date={new Date("2022-04-01")} 
-    title="test event"
-    
-    label="test label"
+    render(<EventCard imageSrc="http://src-image" imageAlt="image-alt-text" date={new Date("2022-04-01")}
+      title="test event"
+
+      label="test label"
     />);
     const imageElement = screen.getByTestId("card-image-testid");
     expect(imageElement).toBeInTheDocument();
@@ -42,6 +42,7 @@ describe("When a event card is created", () => {
         />
       );
       const cardElement = screen.getByTestId("card-testid");
+      console.log(cardElement);
       expect(cardElement.className.includes("EventCard--small")).toEqual(true);
     });
   });
