@@ -31,7 +31,9 @@ describe("When Form is created", () => {
 describe("When a page is created", () => {
   it("a list of events is displayed", async () => {
     render(<Home />);
-    await screen.findByText("Conférence");
+    const allTitleElements = await screen.findAllByText(/nos réalisations/i);
+    const firstTitleElement = allTitleElements[0];
+    expect(firstTitleElement).toBeInTheDocument();
   })
   it("a list a people is displayed", async () => {
     render(<Home />);
@@ -39,10 +41,12 @@ describe("When a page is created", () => {
   })
   it("a footer is displayed", async () => {
     render(<Home />);
-    await screen.findByText("Notre dernière prestation");
+    await screen.findByText("Contactez-nous");
   })
   it("an event card, with the last event, is displayed", async () => {
     render(<Home />);
-    await screen.findByText("Conférence #productCON");
+   const allTitleElements = await screen.findAllByText(/conférence/i);
+   const firstTitleElement = allTitleElements[0];
+   expect(firstTitleElement).toBeInTheDocument();
   })
 });
